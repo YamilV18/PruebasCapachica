@@ -1,11 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'php:8.3-cli'
-            // Opcional: Montar el directorio de Composer para acelerar descargas futuras
-            args '-v $HOME/.composer:/var/jenkins_home/.composer' 
-        }
-    }
+    agent any
 
     environment {
         APP_ENV = 'testing'
