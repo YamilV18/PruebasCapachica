@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         colors="true">
+
+    <testsuites>
+        <testsuite name="All">
+            <directory>tests</directory>
+        </testsuite>
+        <testsuite name="Feature">
+            <directory>tests/Feature</directory>
+        </testsuite>
+    </testsuites>
+
+    <source>
+        <include>
+            <directory>app</directory>
+        </include>
+    </source>
+
+    <php>
+        <!-- Ambiente de test -->
+        <env name="APP_ENV" value="testing"/>
+        <env name="APP_DEBUG" value="true"/>
+
+        <!-- DB de testing -->
+        <env name="DB_CONNECTION" value="mysql"/>
+        <env name="DB_HOST" value="192.168.31.233"/>
+        <env name="DB_PORT" value="3306"/>
+        <env name="DB_DATABASE" value="turismobackend_test"/>
+        <env name="DB_USERNAME" value="nick"/>
+        <env name="DB_PASSWORD" value="nick123"/>
+
+        <!-- Otros drivers en modo memoria/sync -->
+        <env name="CACHE_STORE" value="array"/>
+        <env name="QUEUE_CONNECTION" value="sync"/>
+        <env name="SESSION_DRIVER" value="array"/>
+        <env name="MAIL_MAILER" value="array"/>
+    </php>
+</phpunit>
+
